@@ -6,9 +6,10 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <span> {{ _('Dashboard')}} </span>
+                    <span> {{ __('Dashboard')}} </span>
                     <a href="{{ route('tareas.create') }}" class="btn btn-primary">
                         {{ __('Crear Nueva Tarea') }}
+                    </a> <!-- Cerrado correctamente -->
                 </div>
                 <div class="card-body">
                     @if (session('status'))
@@ -22,6 +23,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Nombre</th>
+                                <th>Acciones</th> <!-- Opcional: para claridad -->
                             </tr>
                         </thead>
                         <tbody>
@@ -35,6 +37,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                        </form> <!-- Cerrado correctamente -->
                                     </td>
                                 </tr>
                             @endforeach
